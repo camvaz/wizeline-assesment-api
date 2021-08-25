@@ -1,15 +1,13 @@
 import { Request, Response } from 'express'
 import axios, { Method } from 'axios'
 
-const symbols = ['AAPL', 'AMZN', 'FB', 'GOOG', 'MSFT', 'TSLA']
-
-export default (_req: Request, res: Response) => {
+export default (req: Request, res: Response) => {
   const YAHOO_RAPIDAPI_KEY = process.env.YAHOO_RAPIDAPI_KEY
-  const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)]
+  const ticker = req.params.ticker
   const options = {
     method: 'GET' as Method,
     url: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-statistics',
-    params: { symbol: randomSymbol, region: 'US' },
+    params: { symbol: ticker, region: 'US' },
     headers: {
       'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
       'x-rapidapi-key': YAHOO_RAPIDAPI_KEY,

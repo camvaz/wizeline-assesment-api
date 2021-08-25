@@ -1,10 +1,12 @@
 ﻿# wizeline-assesment-api
 
 <div style="display:flex;align:center;">
-<img src="https://avatars.githubusercontent.com/u/6192875?s=200&v=4" width="24">
-<img src="https://secure.meetupstatic.com/photos/event/7/5/d/a/600_436110170.jpeg" width="24">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" width="24">
+    <img src="https://avatars.githubusercontent.com/u/6192875?s=200&v=4" width="24">
+    <img src="https://secure.meetupstatic.com/photos/event/7/5/d/a/600_436110170.jpeg" width="24">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" width="24">
 </div>
+<br>
+
 This repository contains the code for my technical assesment for the wizeline go bootcamp. The main goal is to write a REST API in TypeScript using ExpressJS for the app middleware and routing, RapidAPI for third party data fetching and Mocha in the testing side of things.  
 
 ## Onboarding
@@ -21,7 +23,7 @@ Run `npm run test` to run the unit tests. For this, we are using the `mocha` lib
 ## Routes
 
 - `/` <b>GET:</b> Prints `Hello World!`.
-- `/stock` <b>GET:</b>  Sends a JSON response with information related to a random stock from an array of tickers. The response contains the following format:
+- `/stock/:ticker` <b>GET:</b>  Sends a JSON response with information related to a specific stock by providing a ticker. The response contains the following format:
 
 ```
 export interface Response {
